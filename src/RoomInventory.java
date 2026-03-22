@@ -18,6 +18,9 @@ public class RoomInventory {
         inventory.put("Suite Room", 2);
     }
 
+    public int getAvailability(String roomType) {
+        return inventory.getOrDefault(roomType, 0);
+    }
     // Retrieve availability
     public int getAvailability(String roomType) {
         return inventory.getOrDefault(roomType, 0);

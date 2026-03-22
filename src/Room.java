@@ -1,4 +1,5 @@
 /**
+ * Abstract Room class
  * Abstract Room class representing a generalized room type
  */
 public abstract class Room {
