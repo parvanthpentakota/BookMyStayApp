@@ -28,7 +28,7 @@ public class BookingRequestQueue {
         }
 
         for (Reservation r : queue) {
-            r.displayRequest();
+            r.display();
         }
     }
 }

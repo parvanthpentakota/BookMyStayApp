@@ -1,15 +1,10 @@
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * RoomInventory manages room availability using a HashMap.
- * This ensures centralized state management.
- */
 public class RoomInventory {
 
     private Map<String, Integer> inventory;
 
-    // Constructor initializes inventory
     public RoomInventory() {
         inventory = new HashMap<>();
 
@@ -18,25 +13,23 @@ public class RoomInventory {
         inventory.put("Suite Room", 2);
     }
 
+    // Get availability
     public int getAvailability(String roomType) {
         return inventory.getOrDefault(roomType, 0);
     }
 
-    // Retrieve availability
-    public int getAvailability(String roomType) {
-        return inventory.getOrDefault(roomType, 0);
-    }
-
-    // Update availability
+    // Update availability (IMPORTANT for UC6)
     public void updateAvailability(String roomType, int count) {
+        if (count < 0) {
+            System.out.println("Error: Inventory cannot be negative!");
+            return;
+        }
         inventory.put(roomType, count);
     }
 
+    // Display inventory
     public void displayInventory() {
-        System.out.println("\nCurrent Inventory:");
-    // Display current inventory
-    public void displayInventory() {
-        System.out.println("\nCurrent Room Inventory:");
+        System.out.println("\n=== Current Inventory ===");
         for (Map.Entry<String, Integer> entry : inventory.entrySet()) {
             System.out.println(entry.getKey() + " Available: " + entry.getValue());
         }
