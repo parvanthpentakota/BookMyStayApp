@@ -1,3 +1,6 @@
+/**
+ * Reservation represents a guest booking request
+ */
 public class Reservation {
 
     private String guestName;
@@ -8,6 +11,10 @@ public class Reservation {
         this.guestName = guestName;
         this.roomType = roomType;
         this.roomId = roomId;
+
+    public Reservation(String guestName, String roomType) {
+        this.guestName = guestName;
+        this.roomType = roomType;
     }
 
     public String getGuestName() {
@@ -26,5 +33,7 @@ public class Reservation {
         System.out.println("Guest: " + guestName +
                 " | Room: " + roomType +
                 " | Room ID: " + roomId);
+    public void displayRequest() {
+        System.out.println("Guest: " + guestName + " | Room Type: " + roomType);
     }
 }
