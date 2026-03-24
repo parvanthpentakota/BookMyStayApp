@@ -21,6 +21,7 @@ public class RoomInventory {
     public int getAvailability(String roomType) {
         return inventory.getOrDefault(roomType, 0);
     }
+
     // Retrieve availability
     public int getAvailability(String roomType) {
         return inventory.getOrDefault(roomType, 0);
@@ -31,6 +32,8 @@ public class RoomInventory {
         inventory.put(roomType, count);
     }
 
+    public void displayInventory() {
+        System.out.println("\nCurrent Inventory:");
     // Display current inventory
     public void displayInventory() {
         System.out.println("\nCurrent Room Inventory:");
