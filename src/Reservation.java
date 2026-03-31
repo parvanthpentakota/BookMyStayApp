@@ -1,47 +1,36 @@
-/**
- * Reservation represents a guest booking request
- */
-public class Reservation {
+import java.io.Serializable;
+
+public class Reservation implements Serializable {
 
     private String guestName;
     private String roomType;
     private String roomId;
 
-    // ✅ Constructor for UC8
+    // ✅ Constructor with roomId (UC8+)
     public Reservation(String guestName, String roomType, String roomId) {
         this.guestName = guestName;
         this.roomType = roomType;
         this.roomId = roomId;
-
-    public Reservation(String guestName, String roomType) {
-        this.guestName = guestName;
-        this.roomType = roomType;
     }
 
-    // ✅ Constructor for older use cases (UC5, UC6, UC7)
+    // ✅ Constructor WITHOUT roomId (UC5, UC6, UC11)
     public Reservation(String guestName, String roomType) {
         this.guestName = guestName;
         this.roomType = roomType;
         this.roomId = "Not Assigned";
     }
 
-    public String getGuestName() {
-        return guestName;
-    }
+    public String getGuestName() { return guestName; }
+    public String getRoomType() { return roomType; }
+    public String getRoomId() { return roomId; }
 
-    public String getRoomType() {
-        return roomType;
-    }
-
-    public String getRoomId() {
-        return roomId;
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
     }
 
     public void display() {
         System.out.println("Guest: " + guestName +
                 " | Room: " + roomType +
                 " | Room ID: " + roomId);
-    public void displayRequest() {
-        System.out.println("Guest: " + guestName + " | Room Type: " + roomType);
     }
 }
